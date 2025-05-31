@@ -16,3 +16,23 @@
     background: linear-gradient(157deg, rgba(6, 11, 38, 0.94) 0%, rgba(26, 31, 55, 0) 100%);
   }
 }
+
+.ant-menu-item-selected {
+  background-color: #e6f4ff !important; /* Yoki o‘zingiz xohlagan rang */
+  color: #bc8e5b !important; /* Matn rangi */
+}
+
+.ant-menu-item-selected .anticon {
+  color: #bc8e5b !important; /* Icon rangi */
+}
+
+/* global.css yoki styles.css */
+.ant-menu-item {
+  height: 50px !important; /* O‘zingiz istagancha balandlik */
+  line-height: 50px !important; /* Matn vertikal markazda turishi uchun */
+}
+
+.ant-menu-submenu-title {
+  height: 40px !important;
+  line-height: 40px !important;
+}
