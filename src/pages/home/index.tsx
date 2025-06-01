@@ -47,33 +47,20 @@ const HomePage = () => {
           className="mt-[40px]"
           items={[
             {
-              key: "1",
-              icon: <TbMoneybag className=" !text-[20px]" />,
+              key: "12",
+              icon: <IoIosPeople className=" !text-[19px]" />,
               label: (
-                <span className="font-[500] text-lg sm:text-xl ">Qarzlar</span>
+                <span className="font-[500] text-base sm:text-lg  ">Xalq</span>
               ),
-              children: [
-                {
-                  key: "12",
-                  icon: <IoIosPeople className=" !text-[19px]" />,
-                  label: (
-                    <span className="font-[500] text-base sm:text-lg  ">
-                      Xalq
-                    </span>
-                  ),
-                  onClick: () => navigate("/"),
-                },
-                {
-                  key: "14",
-                  icon: <PiScalesFill className=" !text-[19px]" />,
-                  label: (
-                    <span className="font-[500] text-base sm:text-lg  ">
-                      Optom
-                    </span>
-                  ),
-                  onClick: () => navigate("/optom"),
-                },
-              ],
+              onClick: () => navigate("/"),
+            },
+            {
+              key: "14",
+              icon: <PiScalesFill className=" !text-[19px]" />,
+              label: (
+                <span className="font-[500] text-base sm:text-lg  ">Optom</span>
+              ),
+              onClick: () => navigate("/optom"),
             },
             {
               key: "2",
@@ -108,34 +95,40 @@ const HomePage = () => {
         />
       </Sider>
 
-      <div className="fixed bottom-0 left-0 w-full h-[60px] bg-white shadow-md flex justify-around items-center md:hidden z-50">
-        <div
-          onClick={() => navigate("/")}
-          className="flex flex-col items-center text-sm"
-        >
-          <TbMoneybag className="text-xl" />
-          <span>Qarz</span>
-        </div>
-        <div
-          onClick={() => navigate("/firms")}
-          className="flex flex-col items-center text-sm"
-        >
-          <FaTruck className="text-xl" />
-          <span>Firmalar</span>
-        </div>
-        <div
-          onClick={() => navigate("/list")}
-          className="flex flex-col items-center text-sm"
-        >
-          <LiaListOlSolid className="text-xl" />
-          <span>Ro'yxat</span>
-        </div>
-        <div
-          onClick={() => navigate("/employes")}
-          className="flex flex-col items-center text-sm"
-        >
-          <GrUserWorker className="text-xl" />
-          <span>Ishchilar</span>
+      {/* Mobile bottom navigation */}
+      <div className="fixed bottom-0 left-0 w-full h-[60px] flex items-center overflow-x-scroll bg-white shadow-md  md:hidden z-50">
+        <div className="w-[90%] m-auto flex  justify-between items-center">
+          <div
+            onClick={() => navigate("/")}
+            className="flex flex-col items-center text-sm"
+          >
+            <TbMoneybag className="text-xl" />
+            <span>Qarz</span>
+          </div>
+
+          <div
+            onClick={() => navigate("/firms")}
+            className="flex flex-col items-center text-sm"
+          >
+            <FaTruck className="text-xl" />
+            <span>Firmalar</span>
+          </div>
+
+          <div
+            onClick={() => navigate("/list")}
+            className="flex flex-col items-center text-sm"
+          >
+            <LiaListOlSolid className="text-xl" />
+            <span>Ro'yxat</span>
+          </div>
+
+          <div
+            onClick={() => navigate("/employes")}
+            className="flex flex-col items-center text-sm"
+          >
+            <GrUserWorker className="text-xl" />
+            <span>Ishchilar</span>
+          </div>
         </div>
       </div>
 

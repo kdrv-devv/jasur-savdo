@@ -5,6 +5,7 @@ import {
   Modal,
   // Upload,
   type DatePickerProps,
+  Select,
 } from "antd";
 
 import { useReduxSelector } from "../../../hooks/useRedux";
@@ -39,6 +40,36 @@ const AddDebtModal = () => {
     console.log(date, dateString);
   };
 
+  const handleChange = (value: string) => {
+    console.log(`selected ${value}`);
+  };
+
+  const handleImgChange = async (event: any) => {
+    console.log("Camera ochilmoqchi")
+    const file = await event.target.files[0];
+
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("image", file);
+    try {
+      const response = await fetch("", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        console.log("Rasm muofaqiyatli yuklandi");
+      } else {
+        console.error("Xatolik:", await response.text());
+      }
+    } catch (error) {
+      console.log("Serverga ulanishda xatolik:", error);
+    }
+  };
+
+
+
   return (
     <>
       <Modal
@@ -61,7 +92,33 @@ const AddDebtModal = () => {
             className="!w-full  "
             placeholder="Qarz midqorini kiriting..."
           />
-          <Input className="!w-full" placeholder="Qarzni kim bermoqda ..." />
+          <Select
+            defaultValue="jasur"
+            className="!w-full "
+            onChange={handleChange}
+            options={[
+              { value: "jasur", label: "Jasur" },
+              { value: "nodira", label: "Nodira" },
+              { value: "hilola", label: "Hilola" },
+            ]}
+          />
+
+          <Input
+            type="file"
+            accept="image/*"
+            capture="environment"
+            className="hidden"
+            id="cameraInput"
+            onChange={handleImgChange}
+          />
+
+          <label htmlFor="cameraInput">
+            <Button type="default" variant="outlined" className="w-full">
+              <span className="text-lg font-[500] uppercase">
+                📸 Rasmga olish
+              </span>
+            </Button>
+          </label>
 
           <Button type="primary" variant="filled">
             {" "}

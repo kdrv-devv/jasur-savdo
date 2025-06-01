@@ -13,13 +13,13 @@ const DataList = ({
   return (
     <>
       <Table<PeopleListType>
-        className="!w-full shadow-lg hidden md:block mt-4"
+        className="!w-full shadow-lg hidden lg:block mt-4"
         columns={columns}
         dataSource={data}
       />
 
       <List
-        className="block md:hidden mt-4"
+        className="block lg:hidden mt-4"
         grid={{ gutter: 16, column: 1 }}
         dataSource={data}
         renderItem={(item) => (

@@ -183,10 +183,6 @@ const onSearch: SearchProps['onSearch'] = (value) => console.log( value);
           <Button className=" w-full sm:w-auto uppercase" type="primary"  onClick={()=>dispatch(setDebtsModalVisibility({open:true}))} variant="filled">Qo'shish <FaPlus /></Button>
       </div>
 
-
-
-
-    
       <DataList  columns={columns} data={data} />
     
     </div>
